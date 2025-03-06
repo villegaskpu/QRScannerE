@@ -10,5 +10,6 @@ import Foundation
 protocol AuthenticateUserUseCase {
     func authenticateWithBiometrics() async throws -> Bool
     func authenticateWithPIN(_ pin: String) throws -> Bool
+    func setInitialPIN(_ pin: String, confirmation: String) throws
     var isBiometricAvailable: Bool { get }
 }
