@@ -10,18 +10,25 @@ import SwiftUI
 @main
 struct QrScannerEApp: App {
     
-//    @StateObject private var qrVM = QRScannerViewModel(
-//        scannerService: QRScannerService(),
-//        storageService: QRStorageService()
-//    )
+    @StateObject private var authVM = AuthViewModel(
+        authenticateUser: AuthRepository(
+            biometricAuth: BiometricAuthService(),
+            secureStorage: SecureStorageService()
+        )
+    )
+
     
     
     var body: some Scene {
         WindowGroup {
-//            QRScannerView()
-//                .environmentObject(qrVM)
-//                .transition(.slide)
-            AuthView()
+
+            Group {
+                AuthView(viewModel: authVM)
+                    .transition(.opacity)
+            }
+            .onAppear {
+                authVM.checkInitialPINConfiguration()
+            }
         }
     }
 }
