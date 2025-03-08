@@ -6,15 +6,36 @@
 //
 
 import SwiftUI
-
 struct QRScannerView: View {
+    
+    @StateObject private var viewModel = QRScannerViewModel(
+        scannerService: QRScannerService(),
+        storageService: QRStorageService()
+    )
+
     var body: some View {
-        ZStack  {
+        ZStack {
             ScannerContainerView()
                 .edgesIgnoringSafeArea(.all)
-            scanningOverlay
-            scanResultView
+            
+            VStack {
+                scanningOverlay
+                scanResultView
+            }
         }
+        .alert("Error", isPresented: $viewModel.showAlert) {
+            Button("OK", role: .cancel) {
+                viewModel.resetScanner()
+            }
+        } message: {
+            Text(viewModel.error?.localizedDescription ?? "Unknown error")
+        }
+        .onAppear {
+            if !viewModel.isScanning {
+                viewModel.startScanning()
+            }
+        }
+        .environmentObject(viewModel)
     }
     
     private var scanningOverlay: some View {
@@ -32,8 +53,17 @@ struct QRScannerView: View {
     }
     
     private var scanResultView: some View {
-        Text("Texto del QR:")
-            .font(.headline)
+        VStack{
+            Text("Texto del QR:")
+                .font(.headline)
+                if let scannedCode = viewModel.scannedCode {
+                    Text(scannedCode.content)
+                        .font(.body)
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(8)
+                }
+        }
     }
     
     struct ScannerContainerView: UIViewControllerRepresentable {
@@ -68,8 +98,4 @@ struct QRScannerView: View {
             }
         }
     }
-}
-
-#Preview {
-    QRScannerView()
 }

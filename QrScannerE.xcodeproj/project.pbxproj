@@ -6,14 +6,38 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D846073203CC99E73B1F0B0B /* Pods_QrScannerE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790517EBDDD8473D4FD9391F /* Pods_QrScannerE.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		62B45AD62D7B87760038FBBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 629603112D790F9400EE55F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 629603182D790F9400EE55F4;
+			remoteInfo = QrScannerE;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3CAE41A7B2A25B72674DE131 /* Pods-QrScannerE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrScannerE.debug.xcconfig"; path = "Target Support Files/Pods-QrScannerE/Pods-QrScannerE.debug.xcconfig"; sourceTree = "<group>"; };
 		629603192D790F9400EE55F4 /* QrScannerE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QrScannerE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		62B45ACA2D7B875B0038FBBF /* Testing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Testing.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/Testing.framework; sourceTree = DEVELOPER_DIR; };
+		62B45AD22D7B87760038FBBF /* QrScannerETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QrScannerETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		790517EBDDD8473D4FD9391F /* Pods_QrScannerE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QrScannerE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		912AF3E44154F488BA0BF3F0 /* Pods-QrScannerE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QrScannerE.release.xcconfig"; path = "Target Support Files/Pods-QrScannerE/Pods-QrScannerE.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6296031B2D790F9400EE55F4 /* QrScannerE */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = QrScannerE;
+			sourceTree = "<group>";
+		};
+		62B45AD32D7B87760038FBBF /* QrScannerETests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = QrScannerETests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -23,17 +47,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D846073203CC99E73B1F0B0B /* Pods_QrScannerE.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62B45ACF2D7B87760038FBBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D61373EB9958AEC3961C632 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3CAE41A7B2A25B72674DE131 /* Pods-QrScannerE.debug.xcconfig */,
+				912AF3E44154F488BA0BF3F0 /* Pods-QrScannerE.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2EE7C01C3D6AD157A8B0B5E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62B45ACA2D7B875B0038FBBF /* Testing.framework */,
+				790517EBDDD8473D4FD9391F /* Pods_QrScannerE.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		629603102D790F9400EE55F4 = {
 			isa = PBXGroup;
 			children = (
 				6296031B2D790F9400EE55F4 /* QrScannerE */,
+				62B45AD32D7B87760038FBBF /* QrScannerETests */,
 				6296031A2D790F9400EE55F4 /* Products */,
+				1D61373EB9958AEC3961C632 /* Pods */,
+				2EE7C01C3D6AD157A8B0B5E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -41,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				629603192D790F9400EE55F4 /* QrScannerE.app */,
+				62B45AD22D7B87760038FBBF /* QrScannerETests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,9 +106,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 629603272D790F9500EE55F4 /* Build configuration list for PBXNativeTarget "QrScannerE" */;
 			buildPhases = (
+				D2C75361098DCE537341FF4A /* [CP] Check Pods Manifest.lock */,
+				61F97B0BBC54438DE78D5326 /* [CP-User] Run Flutter Build my_flutter Script */,
 				629603152D790F9400EE55F4 /* Sources */,
 				629603162D790F9400EE55F4 /* Frameworks */,
 				629603172D790F9400EE55F4 /* Resources */,
+				3F1573C5631CCEC4A0BE19F9 /* [CP] Embed Pods Frameworks */,
+				2FB78B71800E67B93F365AB8 /* [CP-User] Embed Flutter Build my_flutter Script */,
 			);
 			buildRules = (
 			);
@@ -64,11 +122,32 @@
 				6296031B2D790F9400EE55F4 /* QrScannerE */,
 			);
 			name = QrScannerE;
-			packageProductDependencies = (
-			);
 			productName = QrScannerE;
 			productReference = 629603192D790F9400EE55F4 /* QrScannerE.app */;
 			productType = "com.apple.product-type.application";
+		};
+		62B45AD12D7B87760038FBBF /* QrScannerETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62B45AD82D7B87760038FBBF /* Build configuration list for PBXNativeTarget "QrScannerETests" */;
+			buildPhases = (
+				62B45ACE2D7B87760038FBBF /* Sources */,
+				62B45ACF2D7B87760038FBBF /* Frameworks */,
+				62B45AD02D7B87760038FBBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				62B45AD72D7B87760038FBBF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				62B45AD32D7B87760038FBBF /* QrScannerETests */,
+			);
+			name = QrScannerETests;
+			packageProductDependencies = (
+			);
+			productName = QrScannerETests;
+			productReference = 62B45AD22D7B87760038FBBF /* QrScannerETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -82,6 +161,10 @@
 				TargetAttributes = {
 					629603182D790F9400EE55F4 = {
 						CreatedOnToolsVersion = 16.2;
+					};
+					62B45AD12D7B87760038FBBF = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 629603182D790F9400EE55F4;
 					};
 				};
 			};
@@ -100,6 +183,7 @@
 			projectRoot = "";
 			targets = (
 				629603182D790F9400EE55F4 /* QrScannerE */,
+				62B45AD12D7B87760038FBBF /* QrScannerETests */,
 			);
 		};
 /* End PBXProject section */
@@ -112,7 +196,76 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		62B45AD02D7B87760038FBBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FB78B71800E67B93F365AB8 /* [CP-User] Embed Flutter Build my_flutter Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Embed Flutter Build my_flutter Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../my_flutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh embed_and_thin";
+		};
+		3F1573C5631CCEC4A0BE19F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QrScannerE/Pods-QrScannerE-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QrScannerE/Pods-QrScannerE-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QrScannerE/Pods-QrScannerE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61F97B0BBC54438DE78D5326 /* [CP-User] Run Flutter Build my_flutter Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Run Flutter Build my_flutter Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../my_flutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+		};
+		D2C75361098DCE537341FF4A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QrScannerE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		629603152D790F9400EE55F4 /* Sources */ = {
@@ -122,7 +275,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		62B45ACE2D7B87760038FBBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		62B45AD72D7B87760038FBBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 629603182D790F9400EE55F4 /* QrScannerE */;
+			targetProxy = 62B45AD62D7B87760038FBBF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		629603252D790F9500EE55F4 /* Debug */ = {
@@ -246,6 +414,7 @@
 		};
 		629603282D790F9500EE55F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CAE41A7B2A25B72674DE131 /* Pods-QrScannerE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -254,8 +423,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"QrScannerE/Preview Content\"";
 				DEVELOPMENT_TEAM = WF5X37D4TY;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Usamos la cámara para escanear códigos QR.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Lo usamos para la autenticación segura";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -276,6 +447,7 @@
 		};
 		629603292D790F9500EE55F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 912AF3E44154F488BA0BF3F0 /* Pods-QrScannerE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -284,8 +456,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"QrScannerE/Preview Content\"";
 				DEVELOPMENT_TEAM = WF5X37D4TY;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Usamos la cámara para escanear códigos QR.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Lo usamos para la autenticación segura";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +475,42 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		62B45AD92D7B87760038FBBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WF5X37D4TY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.david.QrScannerETests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QrScannerE.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QrScannerE";
+			};
+			name = Debug;
+		};
+		62B45ADA2D7B87760038FBBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WF5X37D4TY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.david.QrScannerETests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QrScannerE.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QrScannerE";
 			};
 			name = Release;
 		};
@@ -321,6 +531,15 @@
 			buildConfigurations = (
 				629603282D790F9500EE55F4 /* Debug */,
 				629603292D790F9500EE55F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62B45AD82D7B87760038FBBF /* Build configuration list for PBXNativeTarget "QrScannerETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62B45AD92D7B87760038FBBF /* Debug */,
+				62B45ADA2D7B87760038FBBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

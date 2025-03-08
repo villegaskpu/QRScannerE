@@ -9,10 +9,10 @@ import Foundation
 
 final class QRScannerRepository: QRScannerUseCase {
     private let scannerService: QRScannerService
-    private let storage: QRStorageService
+    private let storage: QRStorageServiceProtocol
     
     init(scannerService: QRScannerService = .init(),
-         storage: QRStorageService = .init()) {
+         storage: QRStorageServiceProtocol) {
         self.scannerService = scannerService
         self.storage = storage
     }
