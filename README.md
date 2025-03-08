@@ -2,6 +2,8 @@
 
 Aplicación iOS nativa para escaneo seguro de códigos QR con autenticación biométrica y almacenamiento encriptado.
 
+(SOLO ESCANEA QR QUE CONTENGAN UNA URL EJEMPLO http://www.holadavid.com)
+
 ## Características Clave 🚀
 - 🔐 Autenticación con Face ID/Touch ID + PIN de respaldo
 - 📷 Escaneo QR nativo con `AVFoundation`
