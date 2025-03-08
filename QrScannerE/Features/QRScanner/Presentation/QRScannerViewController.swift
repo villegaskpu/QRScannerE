@@ -1,10 +1,3 @@
-//
-//  QRScannerViewController.swift
-//  QrScannerE
-//
-//  Created by David Villegas Santana on 05/03/25.
-//
-
 import UIKit
 import AVFoundation
 
@@ -19,7 +12,20 @@ final class QRScannerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCaptureSession()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupCamera()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
+        if cameraAuthorizationStatus == .authorized && captureSession == nil {
+            setupCamera()
+        }
     }
     
     private func setupPreviewLayer(session: AVCaptureSession) {
@@ -31,7 +37,6 @@ final class QRScannerViewController: UIViewController {
             self.view.layer.addSublayer(previewLayer)
         }
     }
-
     
     private func setupCaptureSession() {
         sessionQueue.async { [weak self] in
@@ -59,12 +64,11 @@ final class QRScannerViewController: UIViewController {
             self.captureSession = newSession
             
             DispatchQueue.main.async {
-                self.setupPreviewLayer(session: newSession) // 👈 Agrega la capa de video
-                self.startCaptureSession() // ✅ Asegura que se inicie en el hilo principal
+                self.setupPreviewLayer(session: newSession)
+                self.startCaptureSession()
             }
         }
     }
-
     
     func startCaptureSession() {
         sessionQueue.async { [weak self] in
@@ -83,6 +87,35 @@ final class QRScannerViewController: UIViewController {
             }
         }
     }
+    
+    func checkCameraPermissions(completion: @escaping (Bool) -> Void) {
+        let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
+        
+        switch cameraAuthorizationStatus {
+        case .authorized:
+            completion(true)
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                completion(granted)
+            }
+        case .denied, .restricted:
+            completion(false)
+        @unknown default:
+            completion(false)
+        }
+    }
+    
+    func setupCamera() {
+        checkCameraPermissions { [weak self] granted in
+            guard let self = self else { return }
+            
+            if granted {
+                self.setupCaptureSession()
+            } else {
+                print("Permisos de cámara no otorgados")
+            }
+        }
+    }
 }
 
 extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
@@ -96,6 +129,4 @@ extension QRScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             self?.delegate?.didDetectQRCode(code)
         }
     }
-    
 }
-
